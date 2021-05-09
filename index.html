@@ -10,19 +10,18 @@
 <body>
 <div id="app" v-cloak>
     <div class="container">
-        <h1 class="title">{{ title }}</h1>
-
-        <div :class="{'visible': isVisible === true}" class="notes">
+        <h1 class="title">{{ notesTable.title }}</h1>
+        <div :class="{'visible': notesTable.isVisible === true}" class="notes">
             <input type="text"
-                   :placeholder="placeholder"
-                   v-model="inputValue"
+                   :placeholder="notesTable.placeholder"
+                   v-model="notesTable.inputValue"
                    @keypress.enter="addNote"
             />
             <button @click="addNote()" class="btn">Добавить</button>
             <hr/>
-            <ul v-if="this.notes.length !== 0">
-                <li v-for="(note, index) in notes">
-                    {{ index+1 }}.&nbsp; {{ note }}
+            <ul v-if="this.notesTable.notes.length !== 0">
+                <li v-for="(note, index) in notesTable.notes">
+                    {{ index + 1 }}.&nbsp; {{ note }}
                     <button @click="removeNote(index)"
                             @mouseover="hover"
                             @mouseleave="isHover"
@@ -30,8 +29,32 @@
                     </button>
                 </li>
             </ul>
-            <div v-else class="visible-text">{{ textNotes }}</div>
+            <div v-else class="visible-text">{{ notesTable.textNotes }}</div>
         </div>
+
+        <h2 class="title">{{ todoList.title }}</h2>
+        <div class="todo-list">
+            <ul>
+                <li v-for="(item, index) in todoList.lists">
+                    <span class="circle"
+                          @click="setActive(index)">
+                        {{ index+1 }}
+                    </span>
+                    {{ item.title }}
+                </li>
+            </ul>
+
+            <div v-if="todoList.activeIndex !== 4" class="wrap-btn">
+                <button class="btn"
+                        :class="{disabled:  this.todoList.activeIndex > 0 ? false : true}"
+                        @click="prevList()">Назад
+                </button>
+                <button class="btn next"
+                        @click="nextOfFinish()">{{ todoList.text }}</button>
+            </div>
+            <button v-else class="btn finish" @click="reset()">Закончить</button>
+        </div>
+
     </div>
 </div>
 

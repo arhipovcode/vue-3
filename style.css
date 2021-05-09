@@ -16,26 +16,17 @@ hr {
     margin: 0;
 }
 
-ul {
-    padding-left: 0;
-    margin-bottom: 0;
-}
-
-li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 20px;
-    margin-bottom: 10px;
-    color: #ffffff;
-    border: 1px solid #d0d0d0;
-    border-radius: 10px;
-    list-style-type: none;
-}
-
 .container {
     width: 1170px;
     margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
 .btn {
@@ -60,19 +51,28 @@ li {
     color: #ffffff;
 }
 
-.title {
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 60px;
-    color: #ffffff;
-    text-transform: uppercase;
-}
-
-.notes {
+.notes,
+.todo-list {
     border-radius: 10px;
     border: 3px solid #ccc;
     padding: 20px;
     transition: 0.2s;
+}
+
+ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.notes li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    list-style-type: none;
 }
 
 input {
@@ -101,4 +101,71 @@ input:focus {
 .visible-text {
     color: #ffffff;
     margin-top: 16px;
+}
+
+.todo-list {
+    margin-bottom: 100px;
+}
+
+.todo-list ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    list-style-type: none;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    color: #000000;
+    background: #ffffff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #cccccc;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.circle:hover {
+    background: #afafaf;
+}
+
+.wrap-btn .btn {
+    margin-bottom: 0;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+.disabled {
+    color: #ffffff;
+    background: #4e4e4e;
+    cursor: no-drop;
+}
+.disabled:hover {
+    background: #4e4e4e;
+}
+.done {
+    background: #47ff84;
+}
+.active {
+    background: #47ff52;
+    transition: 0.5s;
+}
+.active:hover {
+    background: #47ff52;
+}
+.finish {
+    margin-bottom: 0;
+    margin-top: 30px;
+    background: #478aff;
 }
