@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+#app {
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #193c61;
+}
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+h1,h2,h3 {
+    margin: 0;
+}
+.title {
+    text-align: center;
+}
