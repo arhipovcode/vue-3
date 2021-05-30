@@ -10,6 +10,29 @@ body {
     padding: 0;
     background-color: #193c61;
 }
+button {
+    outline: none;
+    border: none;
+    background: #fff;
+    padding: 8px 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn {
+    border: 1px solid #05b305;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+.primary {
+    color: #fff;
+    background-color: #05b305;
+}
+.danger {
+    color: #fff;
+    background-color: #d70c0c;
+}
 .container {
     width: 1170px;
     margin: 0 auto;
